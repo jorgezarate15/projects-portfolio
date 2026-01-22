@@ -16,22 +16,34 @@ body {
     background: var(--color4);
 }
 
+
+/* --------------- Header Styles ----------------------------*/
+
 .header {
     background: var(--color2);
     color: white;
-    padding: 10px 0;
-
-
+    padding: 15px 30px;
     position: fixed; 
     top: 0; 
     left: 0; 
     width: 100%; 
     z-index: 1000; 
-
-
-
     display: flex; 
     justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+.logo::first-letter {
+    color: var(--color3);
+}
+
+.navegacion {
+    display: flex;
     align-items: center;
 }
 
@@ -39,4 +51,21 @@ body {
     display: flex; /*para alinear horizontalmente*/
     list-style: none; /*sin viñetas*/
     gap: 30px; /*espacio entre los elementos del menú*/
+    margin: 0;
+    padding: 0;
 }
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 50px;
+}
+
+.navegacion a:hover {
+    background-color: var(--color3);
+    color: white;
+}
+/* --------------------End Header Styles------------------------- */
