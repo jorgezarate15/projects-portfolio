@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color1: #001BB7;
+    --color2: #0046FF;
+    --color3: #FF8040;
+    --color4: #F5F1DC;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--color4);
+}
+
+.header {
+    background: var(--color2);
+    color: white;
+    padding: 10px 0;
+
+
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+
+
+
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.navegacion ul, .navegacion li {
+    display: flex; /*para alinear horizontalmente*/
+    list-style: none; /*sin viñetas*/
+    gap: 30px; /*espacio entre los elementos del menú*/
+}
