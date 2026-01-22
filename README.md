@@ -19,10 +19,6 @@ Este es mi portafolio web donde muestro mis proyectos y habilidades.
 
 ## Contacto
 
-- Email: tu-email@ejemplo.com
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- GitHub: [Tu Usuario](https://github.com/tu-usuario)
-
-## Licencia
-
-MIT
+- LinkedIn: [Jorge David Zárate Martínez](https://www.linkedin.com/in/jorge-david-zárate-martinez-45746b266)
+- GitHub: [jorgezarate15](https://github.com/jorgezarate15)
+- Youtube: [ジJorge](https://www.youtube.com/@ジJorge)
