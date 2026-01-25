@@ -95,58 +95,76 @@
             <div class="Habilidades">
                 <h2>Habilidades</h2>
 
-                <div class="Carrusel">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
 
-                    <div class="skill-item">
-                        <img src="/Skills/html.png" alt="HTML5">
-                        <p>HTML5</p>
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="skill-item">
+                                <img src="/Skills/html.png" alt="HTML5">
+                                <p>HTML5</p>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="/Skills/css.png" alt="CSS3">
+                                <p>CSS3</p>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="/Skills/javascript.webp" alt="JavaScript">
+                                <p>JavaScript</p>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="/Skills/Tailwind.png" alt="Tailwind CSS">
+                                <p>Tailwind CSS</p>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="/Skills/astro.png" alt="Astro">
+                                <p>Astro</p>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="/Skills/react.png" alt="React">
+                                <p>React</p>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="/Skills/node.webp" alt="Node.js">
+                                <p>Node.js</p>
+                            </div>                    
+
+                            <div class="skill-item">
+                                <img src="/Skills/python.png" alt="Python">
+                                <p>Python</p>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="/Skills/git.svg" alt="Git">
+                                <p>Git</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="skill-item">
-                        <img src="/Skills/css.png" alt="CSS3">
-                        <p>CSS3</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="/Skills/javascript.webp" alt="JavaScript">
-                        <p>JavaScript</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="/Skills/Tailwind.png" alt="Tailwind CSS">
-                        <p>Tailwind CSS</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="/Skills/astro.png" alt="Astro">
-                        <p>Astro</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="/Skills/react.png" alt="React">
-                        <p>React</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="/Skills/node.webp" alt="Node.js">
-                        <p>Node.js</p>
-                    </div>                    
-
-                    <div class="skill-item">
-                        <img src="/Skills/python.png" alt="Python">
-                        <p>Python</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="/Skills/git.svg" alt="Git">
-                        <p>Git</p>
-                    </div>
-
+                    <button class="carousel-btn next" id="nextBtn" aria-label="Siguiente">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
+
+                <div class="carousel-indicators" id="carouselIndicators"></div>
             </div>
         </section>
         <!------------------End Skills Section ---------------->
     </main>
+
+    <script src="carousel.js"></script>
 
 
 

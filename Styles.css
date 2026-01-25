@@ -335,54 +335,226 @@ section {
 /* ------------------------------------------------------------ */
 
 /*------------------- Skills section Styles ---------------------*/
-#skills {
+#Skills {
     padding: 100px 30px;
     background: linear-gradient(180deg, var(--color1), var(--color2));
     color: white;
 }
 
 .Habilidades {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
+
 .Habilidades h2 {
     font-size: 28px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     color: var(--color4);
     font-family: 'Press Start 2P', sans-serif;
     letter-spacing: 0.5px;
 }
 
-.skills-list {
+/* Contenedor del carrusel */
+.carousel-container {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
+/* Wrapper del carrusel */
+.carousel-wrapper {
+    overflow: hidden;
+    flex: 1;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Track del carrusel */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 20px;
+    padding: 0 10px;
+}
+
+/* Items individuales */
 .skill-item {
+    flex: 0 0 calc((100% / var(--items-per-view)) - 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 120px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    min-height: 180px;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-item:hover {
+    background: rgba(255, 128, 64, 0.15);
+    border-color: var(--color3);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(255, 128, 64, 0.3);
 }
 
 .skill-item img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 12px;
-    transition: transform 0.3s ease;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-.skill-item img:hover {
-    transform: scale(1.1);
+.skill-item:hover img {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 8px 16px rgba(255, 128, 64, 0.4));
 }
 
 .skill-item p {
     margin: 0;
     font-size: 18px;
+    font-weight: 600;
     color: var(--color4);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones del carrusel */
+.carousel-btn {
+    background: rgba(255, 128, 64, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 128, 64, 0.4);
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: var(--color3);
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px rgba(255, 128, 64, 0.6);
+}
+
+.carousel-btn:active:not(:disabled) {
+    transform: scale(1.05);
+}
+
+.carousel-btn:disabled {
+    background: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+.carousel-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: var(--color3);
+    width: 40px;
+    border-radius: 6px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 128, 64, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .skill-item {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .skill-item {
+        flex: 0 0 calc(50% - 15px);
+    }
+    
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .carousel-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .Habilidades h2 {
+        font-size: 22px;
+        margin-bottom: 40px;
+    }
+
+    .carousel-container {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-item {
+        flex: 0 0 100%;
+        min-height: 200px;
+    }
+
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .carousel-wrapper {
+        padding: 30px 15px;
+    }
+
+    .skill-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skill-item p {
+        font-size: 20px;
+    }
 }
 /* ------------------------------------------------------------ */
