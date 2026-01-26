@@ -2,18 +2,20 @@
 
 Portafolio personal de Jorge David Zárate Martínez - Desarrollador de Software.
 
-## 📋 Descripción
+🌐 **Visita mi portafolio en:** [https://jorgezarate.dev](https://jorgezarate.dev)
+
+##  Descripción
 
 Portafolio web profesional que muestra mis proyectos, habilidades y experiencia como desarrollador de software especializado en aplicaciones web y móviles.
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 - HTML5
 - CSS3 (Modular)
 - JavaScript (Vanilla)
 - Fuentes: Press Start 2P, Poppins
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 projects-portfolio/
@@ -34,7 +36,7 @@ projects-portfolio/
 └── README.md
 ```
 
-## 🚀 Instalación y Uso
+##  Instalación y Uso
 
 1. Clona este repositorio:
 ```bash
@@ -49,8 +51,8 @@ python -m http.server 8000
 # Con Node.js (npx http-server)
 npx http-server
 ```
-
-## ✨ Características
+**O accede directamente en:** 🌐 [https://jorgezarate.dev](https://jorgezarate.dev)
+##  Características
 
 - **Diseño Responsivo**: Adaptado a dispositivos móviles, tablets y desktop
 - **Navegación Suave**: Scroll suave entre secciones
@@ -58,7 +60,7 @@ npx http-server
 - **Animaciones CSS**: Efectos visuales modernos
 - **Estructura Modular**: CSS organizado por componentes
 
-## 📱 Contacto
+##  Contacto
 
 - **LinkedIn**: [Jorge David Zárate Martínez](https://www.linkedin.com/in/jorge-david-zárate-martinez-45746b266)
 - **GitHub**: [jorgezarate15](https://github.com/jorgezarate15)
