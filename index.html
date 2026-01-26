@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles.css"> 
+    <!-- CSS Modular -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/Fotos/Logo.png" type="image/png">
+    <link rel="icon" href="assets/images/Logo.png" type="image/png">
     <title>Mi Portafolio</title>
 </head>
 <body>
@@ -38,7 +45,7 @@
 
                 <!-- Foto de inicio y presentación -->
                 <div class="Foto-inicio">
-                    <img src="/Fotos/Dev-Gor.png" alt="Your Photo" >
+                    <img src="assets/images/Dev-Gor.png" alt="Your Photo" >
                 </div>
 
                 <!-- Presentación -->
@@ -124,7 +131,7 @@
                     <div class="about-card about-side">
                         <div class="about-photo-wrap">
                             <div class="about-photo">
-                                <img src="/Fotos/Yo.jpeg" alt="Foto de Jorge">
+                                <img src="assets/images/Yo.jpeg" alt="Foto de Jorge">
                             </div>
                             <div class="about-photo-glow"></div>
                         </div>
@@ -175,47 +182,47 @@
                     <div class="carousel-wrapper">
                         <div class="carousel-track" id="carouselTrack">
                             <div class="skill-item">
-                                <img src="/Skills/html.png" alt="HTML5">
+                                <img src="assets/icons/html.png" alt="HTML5">
                                 <p>HTML5</p>
                             </div>
 
                             <div class="skill-item">
-                                <img src="/Skills/css.png" alt="CSS3">
+                                <img src="assets/icons/css.png" alt="CSS3">
                                 <p>CSS3</p>
                             </div>
 
                             <div class="skill-item">
-                                <img src="/Skills/javascript.webp" alt="JavaScript">
+                                <img src="assets/icons/javascript.webp" alt="JavaScript">
                                 <p>JavaScript</p>
                             </div>
 
                             <div class="skill-item">
-                                <img src="/Skills/Tailwind.png" alt="Tailwind CSS">
+                                <img src="assets/icons/Tailwind.png" alt="Tailwind CSS">
                                 <p>Tailwind CSS</p>
                             </div>
 
                             <div class="skill-item">
-                                <img src="/Skills/astro.png" alt="Astro">
+                                <img src="assets/icons/astro.png" alt="Astro">
                                 <p>Astro</p>
                             </div>
 
                             <div class="skill-item">
-                                <img src="/Skills/react.png" alt="React">
+                                <img src="assets/icons/react.png" alt="React">
                                 <p>React</p>
                             </div>
 
                             <div class="skill-item">
-                                <img src="/Skills/node.webp" alt="Node.js">
+                                <img src="assets/icons/node.webp" alt="Node.js">
                                 <p>Node.js</p>
                             </div>                    
 
                             <div class="skill-item">
-                                <img src="/Skills/python.png" alt="Python">
+                                <img src="assets/icons/python.png" alt="Python">
                                 <p>Python</p>
                             </div>
 
                             <div class="skill-item">
-                                <img src="/Skills/git.svg" alt="Git">
+                                <img src="assets/icons/git.svg" alt="Git">
                                 <p>Git</p>
                             </div>
                         </div>
@@ -232,11 +239,124 @@
             </div>
         </section>
         <!------------------End Skills Section ---------------->
+
+        <!------------------Projects Section ------------------>
+        <section id="projects">
+            <div class="projects-wrapper">
+                <div class="projects-header">
+                    <span class="section-kicker">Proyectos</span>
+                    <h2>Productos que he construido</h2>
+                    <p>Selección de trabajos recientes con foco en UX, rendimiento y código mantenible.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-thumb gradient-1">
+                            <div class="project-pill">Web</div>
+                            <p class="project-name">Landing fintech</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">Landing page enfocada en conversión con layout responsivo y métricas de marketing integradas.</p>
+                            <div class="project-tags">
+                                <span class="tag">Astro</span>
+                                <span class="tag">Tailwind</span>
+                                <span class="tag">A/B testing</span>
+                            </div>
+                            <div class="project-actions">
+                                <a class="btn-primary" href="https://jorgezarate15.github.io/projects-portfolio/" target="_blank" rel="noopener">Ver demo</a>
+                                <a class="btn-ghost" href="https://github.com/jorgezarate15/projects-portfolio" target="_blank" rel="noopener">Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb gradient-2">
+                            <div class="project-pill">App</div>
+                            <p class="project-name">Panel de ventas</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">Dashboard con autenticación y gráficos en tiempo real para monitorear KPIs de negocio.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Charts</span>
+                            </div>
+                            <div class="project-actions">
+                                <a class="btn-primary" href="https://github.com/jorgezarate15" target="_blank" rel="noopener">Ver demo</a>
+                                <a class="btn-ghost" href="https://github.com/jorgezarate15" target="_blank" rel="noopener">Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb gradient-3">
+                            <div class="project-pill">API</div>
+                            <p class="project-name">API de tareas</p>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">Servicio REST con documentación y tests automatizados para gestionar tareas colaborativas.</p>
+                            <div class="project-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <a class="btn-primary" href="https://github.com/jorgezarate15" target="_blank" rel="noopener">Ver demo</a>
+                                <a class="btn-ghost" href="https://github.com/jorgezarate15" target="_blank" rel="noopener">Código</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!------------------End Projects Section ---------------->
+
+        <!------------------Contact Section ------------------>
+        <section id="contact">
+            <div class="contact-wrapper">
+                <div class="contact-card">
+                    <span class="section-kicker">Contacto</span>
+                    <div class="contact-head">
+                        <h2>Construyamos algo increíble</h2>
+                        <span class="status-pill">Disponible para proyectos</span>
+                    </div>
+                    <p>Cuéntame sobre tu producto, un MVP o la vacante que buscas cubrir. Respondo en menos de 24 horas.</p>
+
+                    <div class="contact-links">
+                        <a class="contact-link" href="mailto:jorgezarate15@gmail.com">
+                            <span class="contact-icon">✉</span>
+                            <div>
+                                <p class="contact-label">Email</p>
+                                <p class="contact-value">jorgezarate15@gmail.com</p>
+                            </div>
+                        </a>
+                        <a class="contact-link" href="https://www.linkedin.com/in/jorge-david-z%C3%A1rate-martinez-45746b266" target="_blank" rel="noopener">
+                            <span class="contact-icon">in</span>
+                            <div>
+                                <p class="contact-label">LinkedIn</p>
+                                <p class="contact-value">/jorge-david-zárate-martinez</p>
+                            </div>
+                        </a>
+                        <a class="contact-link" href="https://github.com/jorgezarate15" target="_blank" rel="noopener">
+                            <span class="contact-icon">GH</span>
+                            <div>
+                                <p class="contact-label">GitHub</p>
+                                <p class="contact-value">@jorgezarate15</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-actions">
+                        <a class="btn-primary" href="mailto:jorgezarate15@gmail.com?subject=Hola%20Jorge">Escríbeme</a>
+                        <a class="btn-ghost" href="https://www.linkedin.com/in/jorge-david-z%C3%A1rate-martinez-45746b266" target="_blank" rel="noopener">Agenda una charla</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!------------------End Contact Section ---------------->
+
     </main>
 
-    <script src="carousel.js"></script>
-
-
-
+    <script src="js/carousel.js"></script>
 </body>
 </html>

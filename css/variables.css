@@ -1,0 +1,82 @@
+/* ===============================================
+   Variables y Estilos Globales
+   =============================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color1: #001BB7;
+    --color2: #0046FF;
+    --color3: #FF8040;
+    --color4: #f5efd0;
+}
+
+/* --------------- Global Styles ----------------------------*/
+html {
+    height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none;    /* Firefox */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--color4);
+    min-height: 100vh;
+    overflow-y: auto;               /* Reactiva el scroll */
+    -webkit-overflow-scrolling: touch;/* Scroll suave en iOS */
+    -ms-overflow-style: none;       /* IE y Edge */
+    scrollbar-width: none;          /* Firefox */
+}
+
+/* Oculta la barra de scroll en navegadores WebKit */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Margen de anclaje suave para los links del nav */
+section {
+    scroll-margin-top: 40px;
+}
+
+/* Botones reutilizables */
+.btn-primary,
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--color3);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(255, 128, 64, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(255, 128, 64, 0.45);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color1);
+    border-color: rgba(0, 70, 255, 0.18);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 70, 255, 0.08);
+    box-shadow: 0 12px 26px rgba(0, 70, 255, 0.15);
+}

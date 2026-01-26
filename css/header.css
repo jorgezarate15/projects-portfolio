@@ -1,0 +1,61 @@
+/* ===============================================
+   Header Styles
+   =============================================== */
+
+.header {
+    background: linear-gradient(var(--color1),var(--color2));
+    color: white;
+    padding: 15px 30px;
+    position: relative; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: #0228ff 0px 4px 6px 1px, #0026ff 0px 2px 4px -1px;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.logo::first-letter {
+    color: var(--color3);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+}
+
+.navegacion ul, .navegacion li {
+    display: flex;
+    list-style: none; 
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--color3);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 18px rgba(255, 128, 64, 0.35);
+}
+
+/* --Estilos para estados hover, focus, active y current page--*/
+.navegacion a:hover,
+.navegacion a:focus,
+.navegacion a:active,
+.navegacion a[aria-current="page"] {
+    background: #e56f30;
+    color: white;
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(229, 111, 48, 0.45);
+}
