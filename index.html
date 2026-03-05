@@ -21,9 +21,15 @@
         <!-- Logo -->
         <div class="logo">Jorge</div>
 
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <!-- Navigation -->
-        <div class="navegacion">
-            <nav>
+        <div class="navegacion" id="mainNav">
+            <nav aria-label="Navegación principal">
                 <ul>
                     <li><a href="#home">Inicio</a></li>
                     <li><a href="#about">Sobre Mí</a></li>
@@ -358,5 +364,6 @@
     </main>
 
     <script src="js/carousel.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>
