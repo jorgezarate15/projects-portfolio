@@ -3,7 +3,7 @@
    =============================================== */
 
 #about {
-    padding: 120px 30px 110px 30px;
+    padding: var(--section-space-y) 30px;
     background: radial-gradient(circle at 20% 20%, rgba(0, 70, 255, 0.08), transparent 35%),
                 radial-gradient(circle at 80% 0%, rgba(255, 128, 64, 0.12), transparent 40%),
                 var(--color4);
@@ -23,7 +23,7 @@
 }
 
 .about-container {
-    max-width: 1200px;
+    max-width: var(--content-max);
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -38,11 +38,18 @@
 
 .about-card {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 20px;
-    padding: 32px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    border: var(--card-border-soft);
+    border-radius: var(--card-radius);
+    padding: clamp(24px, 2.8vw, 32px);
+    box-shadow: var(--card-shadow-soft);
     backdrop-filter: blur(10px);
+    transition: transform var(--motion-medium) var(--ease-out-fluid), box-shadow var(--motion-normal) var(--ease-out-smooth), border-color var(--motion-normal) var(--ease-out-snappy), background var(--motion-normal) var(--ease-out-smooth);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.16);
+    border-color: rgba(0, 70, 255, 0.2);
 }
 
 .about-main h2 {
@@ -58,6 +65,7 @@
     font-size: 18px;
     line-height: 1.6;
     color: #1a1a1a;
+    max-width: 62ch;
 }
 
 .about-kicker {
@@ -93,7 +101,7 @@
     font-weight: 600;
     border: 1px solid rgba(0, 70, 255, 0.12);
     font-size: 14px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform var(--motion-fast), box-shadow var(--motion-fast);
 }
 
 .pill:hover {
@@ -166,12 +174,24 @@
     box-shadow: 0 18px 38px rgba(0, 0, 0, 0.15);
     position: relative;
     z-index: 2;
+    transition: transform var(--motion-medium) var(--ease-out-fluid), box-shadow var(--motion-normal) var(--ease-out-smooth);
 }
 
 .about-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform var(--motion-medium) var(--ease-out-fluid), filter var(--motion-normal) var(--ease-out-snappy);
+}
+
+.about-side:hover .about-photo {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.22);
+}
+
+.about-side:hover .about-photo img {
+    transform: scale(1.04);
+    filter: saturate(1.04);
 }
 
 .about-photo-glow {
@@ -196,6 +216,14 @@
     border-radius: 12px;
     padding: 14px 16px;
     border: 1px solid rgba(255, 255, 255, 0.14);
+    transition: transform var(--motion-fast) var(--ease-out-snappy), border-color var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-fast);
+}
+
+.stat:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 70, 255, 0.22);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .stat h3 {
@@ -241,7 +269,7 @@
 
 @media (max-width: 640px) {
     #about {
-        padding: 90px 20px 80px 20px;
+        padding: var(--section-space-y-mobile) 20px;
     }
 
     .about-card {

@@ -3,20 +3,20 @@
    =============================================== */
 
 #Skills {
-    padding: 100px 30px;
-    background: linear-gradient(180deg, var(--color1), var(--color2));
+    padding: var(--section-space-y) 30px;
+    background: var(--bg-blue-surface);
     color: white;
 }
 
 .Habilidades {
-    max-width: 1200px;
+    max-width: var(--content-max);
     margin: 0 auto;
     text-align: center;
 }
 
 .Habilidades h2 {
     font-size: 28px;
-    margin-bottom: 60px;
+    margin-bottom: clamp(36px, 5vw, 60px);
     color: var(--color4);
     font-family: 'Press Start 2P', sans-serif;
     letter-spacing: 0.5px;
@@ -39,7 +39,7 @@
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
     padding: 40px 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--card-shadow-soft);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
@@ -47,9 +47,10 @@
 /* Track del carrusel */
 .carousel-track {
     display: flex;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--motion-slow) var(--ease-out-fluid);
     gap: 20px;
     padding: 0 10px;
+    will-change: transform;
 }
 
 /* Items individuales */
@@ -61,7 +62,7 @@
     padding: 20px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--motion-medium) var(--ease-out-fluid), box-shadow var(--motion-normal) var(--ease-out-smooth), border-color var(--motion-normal) var(--ease-out-smooth), background var(--motion-normal) var(--ease-out-smooth), opacity var(--motion-normal) var(--ease-out-snappy), filter var(--motion-normal) var(--ease-out-smooth);
     border: 2px solid transparent;
     min-height: 180px;
     justify-content: center;
@@ -71,20 +72,20 @@
 .skill-item:hover {
     background: rgba(255, 128, 64, 0.15);
     border-color: var(--color3);
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(255, 128, 64, 0.3);
+    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 18px 38px rgba(255, 128, 64, 0.34);
 }
 
 .skill-item img {
     width: 90px;
     height: 90px;
     margin-bottom: 16px;
-    transition: all 0.3s ease;
+    transition: transform var(--motion-normal) var(--ease-out-smooth), filter var(--motion-normal);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .skill-item:hover img {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.07) rotate(2deg);
     filter: drop-shadow(0 8px 16px rgba(255, 128, 64, 0.4));
 }
 
@@ -108,7 +109,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-fast), opacity var(--motion-fast);
     color: white;
     box-shadow: 0 6px 20px rgba(255, 128, 64, 0.4);
     flex-shrink: 0;
@@ -117,7 +118,7 @@
 
 .carousel-btn:hover:not(:disabled) {
     background: var(--color3);
-    transform: scale(1.15);
+    transform: scale(1.08) translateY(-1px);
     box-shadow: 0 8px 30px rgba(255, 128, 64, 0.6);
 }
 
@@ -151,7 +152,7 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform var(--motion-fast) var(--ease-out-snappy), background var(--motion-fast), width var(--motion-fast), border-color var(--motion-fast), box-shadow var(--motion-fast);
     border: 2px solid transparent;
 }
 
@@ -162,7 +163,7 @@
 
 .indicator.active {
     background: var(--color3);
-    width: 40px;
+    width: 36px;
     border-radius: 6px;
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 15px rgba(255, 128, 64, 0.6);
@@ -201,6 +202,10 @@
 }
 
 @media (max-width: 480px) {
+    #Skills {
+        padding: var(--section-space-y-mobile) 20px;
+    }
+
     .skill-item {
         flex: 0 0 100%;
         min-height: 200px;

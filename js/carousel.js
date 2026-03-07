@@ -1,14 +1,20 @@
 // Carrusel de Skills
 class SkillsCarousel {
     constructor() {
+        this.container = document.querySelector('.carousel-container');
         this.track = document.getElementById('carouselTrack');
         this.prevBtn = document.getElementById('prevBtn');
         this.nextBtn = document.getElementById('nextBtn');
         this.indicators = document.getElementById('carouselIndicators');
+        if (!this.track || !this.prevBtn || !this.nextBtn || !this.indicators || !this.container) {
+            return;
+        }
         this.items = Array.from(this.track.children);
         this.currentIndex = 0;
         this.itemsPerView = this.getItemsPerView();
         this.totalPages = Math.ceil(this.items.length / this.itemsPerView);
+        this.frameId = null;
+        this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         
         this.init();
     }
@@ -23,7 +29,7 @@ class SkillsCarousel {
 
     init() {
         this.createIndicators();
-        this.updateCarousel();
+        this.scheduleUpdate();
         this.attachEventListeners();
         
         // Actualizar al redimensionar la ventana
@@ -34,9 +40,9 @@ class SkillsCarousel {
                 this.totalPages = Math.ceil(this.items.length / this.itemsPerView);
                 this.currentIndex = Math.min(this.currentIndex, this.totalPages - 1);
                 this.createIndicators();
-                this.updateCarousel();
+                this.scheduleUpdate();
             }
-        });
+        }, { passive: true });
     }
 
     createIndicators() {
@@ -49,7 +55,7 @@ class SkillsCarousel {
             }
             indicator.addEventListener('click', () => {
                 this.currentIndex = i;
-                this.updateCarousel();
+                this.scheduleUpdate();
             });
             this.indicators.appendChild(indicator);
         }
@@ -61,8 +67,15 @@ class SkillsCarousel {
 
         // Soporte para teclado
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.prev();
-            if (e.key === 'ArrowRight') this.next();
+            if (!this.canUseKeyboard()) return;
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                this.prev();
+            }
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                this.next();
+            }
         });
 
         // Soporte para gestos táctiles
@@ -71,12 +84,12 @@ class SkillsCarousel {
 
         this.track.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
-        });
+        }, { passive: true });
 
         this.track.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             this.handleSwipe();
-        });
+        }, { passive: true });
 
         const handleSwipe = () => {
             if (touchEndX < touchStartX - 50) this.next();
@@ -86,18 +99,34 @@ class SkillsCarousel {
         this.handleSwipe = handleSwipe;
     }
 
+    canUseKeyboard() {
+        const activeElement = document.activeElement;
+        return this.container.matches(':hover') || (activeElement && this.container.contains(activeElement));
+    }
+
     prev() {
         if (this.currentIndex > 0) {
             this.currentIndex--;
-            this.updateCarousel();
+            this.scheduleUpdate();
         }
     }
 
     next() {
         if (this.currentIndex < this.totalPages - 1) {
             this.currentIndex++;
-            this.updateCarousel();
+            this.scheduleUpdate();
         }
+    }
+
+    scheduleUpdate() {
+        if (this.frameId !== null) {
+            cancelAnimationFrame(this.frameId);
+        }
+
+        this.frameId = requestAnimationFrame(() => {
+            this.updateCarousel();
+            this.frameId = null;
+        });
     }
 
     updateCarousel() {
@@ -109,11 +138,10 @@ class SkillsCarousel {
         const wrapper = this.track.parentElement;
         const wrapperWidth = wrapper.offsetWidth - 40; // restando padding
         const itemWidth = (wrapperWidth - (gapSize * (this.itemsPerView - 1))) / this.itemsPerView;
-        const totalGap = gapSize * (this.currentIndex * this.itemsPerView);
         
         // Calcular offset en píxeles
         const offset = -(this.currentIndex * this.itemsPerView * (itemWidth + gapSize));
-        this.track.style.transform = `translateX(${offset}px)`;
+        this.track.style.transform = `translate3d(${offset}px, 0, 0)`;
 
         // Actualizar indicadores
         const allIndicators = this.indicators.querySelectorAll('.indicator');
@@ -129,13 +157,21 @@ class SkillsCarousel {
         this.items.forEach((item, index) => {
             const startIndex = this.currentIndex * this.itemsPerView;
             const endIndex = startIndex + this.itemsPerView;
+            const visibleIndex = index - startIndex;
+            const delay = this.prefersReducedMotion ? 0 : Math.max(0, visibleIndex) * 28;
+
+            item.style.transition = this.prefersReducedMotion
+                ? 'none'
+                : `opacity var(--motion-normal) var(--ease-out-snappy) ${delay}ms, transform var(--motion-medium) var(--ease-out-fluid) ${delay}ms, filter var(--motion-normal) var(--ease-out-smooth) ${delay}ms`;
             
             if (index >= startIndex && index < endIndex) {
                 item.style.opacity = '1';
-                item.style.transform = 'scale(1)';
+                item.style.transform = 'translateY(0) scale(1)';
+                item.style.filter = 'blur(0)';
             } else {
-                item.style.opacity = '0.5';
-                item.style.transform = 'scale(0.85)';
+                item.style.opacity = '0.68';
+                item.style.transform = 'translateY(6px) scale(0.945)';
+                item.style.filter = 'blur(1px)';
             }
         });
     }

@@ -3,7 +3,9 @@
    =============================================== */
 
 .header {
-    background: linear-gradient(var(--color1),var(--color2));
+    background:
+        radial-gradient(circle at 88% -40%, rgba(255, 128, 64, 0.26), transparent 52%),
+        linear-gradient(160deg, #050a3a 0%, #0a1772 42%, #1028a5 100%);
     color: white;
     padding: 15px 30px;
     position: relative; 
@@ -11,13 +13,20 @@
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    box-shadow: #0228ff 0px 4px 6px 1px, #0026ff 0px 2px 4px -1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 24px rgba(5, 10, 58, 0.38);
 }
 
 .logo {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 28px;
     letter-spacing: 2px;
+    transition: transform var(--motion-fast) var(--ease-out-snappy), letter-spacing var(--motion-fast) var(--ease-out-snappy);
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+    letter-spacing: 2.5px;
 }
 
 .logo::first-letter {
@@ -44,17 +53,19 @@
     flex-direction: column;
     gap: 5px;
     box-shadow: 0 8px 18px rgba(255, 128, 64, 0.35);
+    transition: transform var(--motion-fast) var(--ease-out-snappy), background var(--motion-fast), box-shadow var(--motion-fast);
 }
 
 .menu-toggle:hover {
     background: #e56f30;
+    transform: translateY(-1px);
 }
 
 .menu-toggle span {
     width: 22px;
     height: 2px;
     background: white;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    transition: transform var(--motion-normal) var(--ease-out-snappy), opacity var(--motion-fast) var(--ease-out-smooth);
 }
 
 .navegacion ul, .navegacion li {
@@ -69,7 +80,7 @@
     color: white;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: transform var(--motion-fast), background var(--motion-fast), box-shadow var(--motion-fast), color var(--motion-fast);
     padding: 10px 16px;
     border-radius: 999px;
     background: var(--color3);
@@ -109,14 +120,14 @@
         border-radius: 14px;
         box-shadow: 0 14px 30px rgba(229, 111, 48, 0.45);
         opacity: 0;
-        transform: translateY(-8px);
+        transform: translateY(-10px) scale(0.985);
         pointer-events: none;
-        transition: opacity 0.25s ease, transform 0.25s ease;
+        transition: opacity var(--motion-normal) var(--ease-out-smooth), transform var(--motion-normal) var(--ease-out-fluid);
     }
 
     .header.menu-open .navegacion {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         pointer-events: auto;
     }
 

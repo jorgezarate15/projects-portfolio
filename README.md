@@ -65,7 +65,7 @@ npx http-server
 - **LinkedIn**: [Jorge David Zárate Martínez](https://www.linkedin.com/in/jorge-david-zárate-martinez-45746b266)
 - **GitHub**: [jorgezarate15](https://github.com/jorgezarate15)
 - **YouTube**: [ジJorge](https://www.youtube.com/@ジJorge)
-- **Email**: jorgezarate15@gmail.com
+- **Email**: jorgedavidzaratemartinez15@gmail.com
 
 ---
 Desarrollado con ❤️ por Jorge Zárate

@@ -11,6 +11,29 @@
     --color2: #0046FF;
     --color3: #FF8040;
     --color4: #f5efd0;
+    --content-max: 1200px;
+    --section-space-y: clamp(88px, 9vw, 120px);
+    --section-space-y-mobile: clamp(72px, 11vw, 92px);
+    --card-radius: 20px;
+    --card-border-soft: 1px solid rgba(255, 255, 255, 0.16);
+    --card-shadow-soft: 0 20px 46px rgba(0, 0, 0, 0.12);
+    --card-shadow-strong: 0 24px 52px rgba(0, 0, 0, 0.18);
+    --motion-fast: 0.2s;
+    --motion-normal: 0.28s;
+    --motion-medium: 0.42s;
+    --motion-slow: 0.62s;
+    --motion-enter: 0.68s;
+    --motion-enter-opacity: 0.46s;
+    --motion-stagger-fast: 56ms;
+    --motion-stagger-medium: 82ms;
+    --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-fluid: cubic-bezier(0.2, 0.9, 0.2, 1);
+    --ease-bounce-soft: cubic-bezier(0.34, 1.2, 0.64, 1);
+    --bg-blue-surface:
+        radial-gradient(circle at 85% 0%, rgba(255, 128, 64, 0.22), transparent 42%),
+        radial-gradient(circle at 10% 100%, rgba(0, 70, 255, 0.25), transparent 40%),
+        linear-gradient(160deg, #050a3a 0%, #0a1772 42%, #1028a5 100%);
 }
 
 /* --------------- Global Styles ----------------------------*/
@@ -19,6 +42,7 @@ html {
     overflow-y: auto;
     -ms-overflow-style: none; /* IE y Edge */
     scrollbar-width: none;    /* Firefox */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -41,7 +65,7 @@ body::-webkit-scrollbar {
 
 /* Margen de anclaje suave para los links del nav */
 section {
-    scroll-margin-top: 40px;
+    scroll-margin-top: 72px;
 }
 
 /* Botones reutilizables */
@@ -54,7 +78,7 @@ section {
     border-radius: 12px;
     font-weight: 700;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: transform var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast);
     border: 2px solid transparent;
 }
 
@@ -69,6 +93,10 @@ section {
     box-shadow: 0 16px 36px rgba(255, 128, 64, 0.45);
 }
 
+.btn-primary:active {
+    transform: translateY(0);
+}
+
 .btn-ghost {
     background: transparent;
     color: var(--color1);
@@ -79,4 +107,94 @@ section {
     transform: translateY(-2px);
     background: rgba(0, 70, 255, 0.08);
     box-shadow: 0 12px 26px rgba(0, 70, 255, 0.15);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color3);
+    outline-offset: 3px;
+}
+
+/* Reveal Animations (aplicadas via JS para no ocultar contenido sin script) */
+.reveal {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.985);
+    filter: blur(3px);
+    transition:
+        transform var(--motion-enter) var(--ease-out-fluid),
+        opacity var(--motion-enter-opacity) var(--ease-out-snappy),
+        filter var(--motion-enter-opacity) var(--ease-out-smooth);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: transform, opacity;
+}
+
+.reveal-soft {
+    transform: translate3d(0, 14px, 0) scale(0.992);
+}
+
+.reveal-left {
+    transform: translate3d(-18px, 0, 0);
+}
+
+.reveal-right {
+    transform: translate3d(18px, 0, 0);
+}
+
+.reveal-fade {
+    transform: none;
+    filter: none;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+    will-change: auto;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --motion-enter: 0.56s;
+        --motion-enter-opacity: 0.36s;
+        --motion-stagger-fast: 44ms;
+        --motion-stagger-medium: 68ms;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal,
+    .reveal-soft,
+    .reveal-left,
+    .reveal-right,
+    .reveal-fade {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .btn-primary,
+    .btn-ghost,
+    .pill,
+    .tag,
+    .project-card,
+    .contact-link,
+    .footer-link,
+    .skill-item,
+    .indicator,
+    .navegacion a {
+        transition: none !important;
+    }
 }
