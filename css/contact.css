@@ -3,7 +3,7 @@
    =============================================== */
 
 #contact {
-    padding: var(--section-space-y) 30px;
+    padding: var(--section-space-y) clamp(18px, 4vw, 30px);
     background: var(--bg-blue-surface);
     color: white;
     position: relative;
@@ -43,10 +43,12 @@
     transition: transform var(--motion-medium) var(--ease-out-fluid), box-shadow var(--motion-normal) var(--ease-out-smooth), border-color var(--motion-normal) var(--ease-out-snappy);
 }
 
-.contact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 38px 82px rgba(0, 0, 0, 0.34);
-    border-color: rgba(255, 255, 255, 0.3);
+@media (hover: hover) {
+    .contact-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 38px 82px rgba(0, 0, 0, 0.34);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
 }
 
 .contact-card::before,
@@ -99,11 +101,12 @@
     font-family: 'Press Start 2P', sans-serif;
     letter-spacing: 0.7px;
     line-height: 1.2;
+    overflow-wrap: anywhere;
 }
 
 .contact-card p {
     margin: 0;
-    font-size: 18px;
+    font-size: clamp(15px, 1.4vw, 18px);
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.92);
 }
@@ -157,6 +160,7 @@
     display: flex;
     gap: 14px;
     align-items: center;
+    min-width: 0;
     padding: 15px 16px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
     border: 1px solid rgba(255, 255, 255, 0.26);
@@ -166,11 +170,13 @@
     transition: transform var(--motion-medium) var(--ease-out-fluid), box-shadow var(--motion-normal) var(--ease-out-smooth), border-color var(--motion-normal) var(--ease-out-snappy), background var(--motion-normal) var(--ease-out-smooth);
 }
 
-.contact-link:hover {
-    transform: translateY(-6px) scale(1.01);
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+@media (hover: hover) {
+    .contact-link:hover {
+        transform: translateY(-6px) scale(1.01);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+    }
 }
 
 .contact-icon {
@@ -189,10 +195,12 @@
     flex-shrink: 0;
 }
 
-.contact-link:hover .contact-icon {
-    transform: scale(1.08) rotate(-4deg);
-    background: linear-gradient(145deg, rgba(255, 128, 64, 0.48), rgba(0, 70, 255, 0.46));
-    border-color: rgba(255, 255, 255, 0.42);
+@media (hover: hover) {
+    .contact-link:hover .contact-icon {
+        transform: scale(1.08) rotate(-4deg);
+        background: linear-gradient(145deg, rgba(255, 128, 64, 0.48), rgba(0, 70, 255, 0.46));
+        border-color: rgba(255, 255, 255, 0.42);
+    }
 }
 
 .contact-link > div {
@@ -213,6 +221,7 @@
     color: var(--color4);
     font-weight: 800;
     letter-spacing: 0.2px;
+    overflow-wrap: anywhere;
     word-break: break-word;
 }
 
@@ -336,6 +345,7 @@
 @media (max-width: 980px) {
     .contact-layout {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .contact-main {
@@ -347,10 +357,50 @@
     }
 }
 
+@media (max-width: 760px) {
+    .contact-card {
+        padding: clamp(18px, 5.5vw, 24px);
+    }
+
+    .contact-head {
+        margin-bottom: 12px;
+    }
+
+    .contact-head h2 {
+        font-size: clamp(20px, 6.3vw, 26px);
+        line-height: 1.35;
+        letter-spacing: 0.45px;
+    }
+
+    .status-pill {
+        font-size: 11px;
+        letter-spacing: 0.2px;
+        padding: 8px 11px;
+    }
+
+    .contact-links {
+        margin: 22px 0 16px 0;
+    }
+}
+
 /* Responsive */
 @media (max-width: 640px) {
     #contact {
         padding: var(--section-space-y-mobile) 20px;
+    }
+
+    .contact-card {
+        border-radius: 18px;
+    }
+
+    .contact-card::before,
+    .contact-card::after {
+        display: none;
+    }
+
+    .contact-layout {
+        margin-top: 12px;
+        gap: 16px;
     }
 
     .contact-head h2 {
@@ -383,5 +433,40 @@
     .contact-actions {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .contact-actions .btn-primary,
+    .contact-actions .btn-ghost {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    #contact {
+        padding-inline: 14px;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .contact-head h2 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .contact-link {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+    }
+
+    .contact-meta-item {
+        padding: 10px;
     }
 }
