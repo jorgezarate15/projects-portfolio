@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const targets = [];
     const delayScale = isSmallScreen ? 0.78 : 1;
-    const maxDelay = isSmallScreen ? 360 : 560;
+    const maxDelay = isSmallScreen ? 420 : 620;
     const queuedTargets = [];
     let revealRaf = null;
 
@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     addRevealGroup('#Skills .Habilidades h2', { variant: 'reveal-soft', baseDelay: 14, step: 0 });
     addRevealGroup('#Skills .carousel-container', { variant: 'reveal-soft', baseDelay: 64, step: 0 });
     addRevealGroup('#Skills .carousel-indicators', { variant: 'reveal-fade', baseDelay: 116, step: 0 });
+
+    addRevealGroup('#certificates .certificates-header', { variant: 'reveal-soft', baseDelay: 18, step: 0 });
+    addRevealGroup('#certificates .certificate-card', { variant: 'reveal-soft', baseDelay: 58, step: staggerMedium });
 
     addRevealGroup('#projects .projects-header', { variant: 'reveal-soft', baseDelay: 20, step: 0 });
     addRevealGroup('#projects .project-card', { variant: 'reveal-soft', baseDelay: 52, step: staggerMedium });
@@ -110,8 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             root: null,
-            rootMargin: isSmallScreen ? '0px 0px -4% 0px' : '0px 0px -8% 0px',
-            threshold: isSmallScreen ? 0.1 : 0.14,
+            rootMargin: isSmallScreen ? '0px 0px -2% 0px' : '0px 0px -6% 0px',
+            threshold: isSmallScreen ? 0.08 : 0.12,
         }
     );
 

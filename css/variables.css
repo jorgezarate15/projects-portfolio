@@ -18,17 +18,17 @@
     --card-border-soft: 1px solid rgba(255, 255, 255, 0.16);
     --card-shadow-soft: 0 20px 46px rgba(0, 0, 0, 0.12);
     --card-shadow-strong: 0 24px 52px rgba(0, 0, 0, 0.18);
-    --motion-fast: 0.2s;
-    --motion-normal: 0.28s;
-    --motion-medium: 0.42s;
-    --motion-slow: 0.62s;
-    --motion-enter: 0.68s;
-    --motion-enter-opacity: 0.46s;
+    --motion-fast: 0.24s;
+    --motion-normal: 0.34s;
+    --motion-medium: 0.52s;
+    --motion-slow: 0.76s;
+    --motion-enter: 0.82s;
+    --motion-enter-opacity: 0.56s;
     --motion-stagger-fast: 56ms;
     --motion-stagger-medium: 82ms;
     --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-out-snappy: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-out-fluid: cubic-bezier(0.2, 0.9, 0.2, 1);
+    --ease-out-fluid: cubic-bezier(0.22, 0.88, 0.22, 1);
     --ease-bounce-soft: cubic-bezier(0.34, 1.2, 0.64, 1);
     --bg-blue-surface:
         radial-gradient(circle at 85% 0%, rgba(255, 128, 64, 0.22), transparent 42%),
@@ -118,8 +118,8 @@ button:focus-visible {
 /* Reveal Animations (aplicadas via JS para no ocultar contenido sin script) */
 .reveal {
     opacity: 0;
-    transform: translate3d(0, 24px, 0) scale(0.985);
-    filter: blur(3px);
+    transform: translate3d(0, 18px, 0) scale(0.992);
+    filter: blur(2px);
     transition:
         transform var(--motion-enter) var(--ease-out-fluid),
         opacity var(--motion-enter-opacity) var(--ease-out-snappy),
@@ -129,15 +129,15 @@ button:focus-visible {
 }
 
 .reveal-soft {
-    transform: translate3d(0, 14px, 0) scale(0.992);
+    transform: translate3d(0, 10px, 0) scale(0.994);
 }
 
 .reveal-left {
-    transform: translate3d(-18px, 0, 0);
+    transform: translate3d(-14px, 0, 0);
 }
 
 .reveal-right {
-    transform: translate3d(18px, 0, 0);
+    transform: translate3d(14px, 0, 0);
 }
 
 .reveal-fade {
@@ -154,8 +154,8 @@ button:focus-visible {
 
 @media (max-width: 768px) {
     :root {
-        --motion-enter: 0.56s;
-        --motion-enter-opacity: 0.36s;
+        --motion-enter: 0.62s;
+        --motion-enter-opacity: 0.42s;
         --motion-stagger-fast: 44ms;
         --motion-stagger-medium: 68ms;
     }
