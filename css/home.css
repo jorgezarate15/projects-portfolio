@@ -48,6 +48,21 @@
     animation: none;
 }
 
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.home-availability {
+    margin-top: 12px;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.86);
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .Foto-inicio {
     width: 470px;
     height: 470px;
@@ -234,6 +249,10 @@
         min-width: 0;
         max-width: 100%;
         align-items: center;
+    }
+
+    .home-actions {
+        justify-content: center;
     }
 
     .Presentacion-Inicio h2 {

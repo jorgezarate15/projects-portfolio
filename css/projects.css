@@ -53,6 +53,79 @@
     align-items: stretch;
 }
 
+.projects-proof {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 18px;
+    margin: 0 0 clamp(24px, 4vw, 34px) 0;
+}
+
+.proof-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.proof-card {
+    background: linear-gradient(160deg, rgba(0, 70, 255, 0.12), rgba(255, 255, 255, 0.86));
+    border: 1px solid rgba(0, 70, 255, 0.15);
+    border-radius: calc(var(--card-radius) - 8px);
+    padding: 16px;
+    box-shadow: 0 14px 28px rgba(0, 24, 92, 0.12);
+}
+
+.proof-value {
+    margin: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: clamp(20px, 2.6vw, 28px);
+    color: var(--color1);
+    line-height: 1.2;
+}
+
+.proof-label {
+    margin: 10px 0 0 0;
+    color: #1f2c4d;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+.proof-quote {
+    background: linear-gradient(160deg, rgba(255, 128, 64, 0.22), rgba(255, 255, 255, 0.9));
+    border: 1px solid rgba(255, 128, 64, 0.24);
+    border-radius: calc(var(--card-radius) - 8px);
+    padding: 18px;
+    box-shadow: 0 14px 28px rgba(121, 58, 12, 0.14);
+}
+
+.quote-kicker {
+    margin: 0;
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #6f3a0a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.proof-quote blockquote {
+    margin: 12px 0 10px 0;
+    color: #2b1a0e;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.quote-author {
+    margin: 0;
+    color: #5f3c24;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
+
 .project-card {
     position: relative;
     background: rgba(255, 255, 255, 0.85);
@@ -153,7 +226,24 @@
     color: #242424;
     line-height: 1.5;
     font-size: 16px;
-    min-height: 72px;
+    min-height: 52px;
+}
+
+.project-meta {
+    margin: 0;
+    font-size: 13px;
+    color: #2b3f82;
+    line-height: 1.4;
+}
+
+.project-highlights {
+    margin: 0;
+    padding-left: 18px;
+    color: #202020;
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.45;
 }
 
 .project-tags {
@@ -190,6 +280,14 @@
 @media (max-width: 640px) {
     #projects {
         padding: var(--section-space-y-mobile) 20px;
+    }
+
+    .projects-proof {
+        grid-template-columns: 1fr;
+    }
+
+    .proof-stats {
+        grid-template-columns: 1fr;
     }
 
     .projects-header h2 {
