@@ -1,71 +1,93 @@
-# Mi Portafolio
+# Portafolio de Jorge Zarate
 
-Portafolio personal de Jorge David Zárate Martínez - Desarrollador de Software.
+Portafolio personal enfocado en mostrar proyectos, habilidades, certificaciones y propuesta de valor como Desarrollador de Software.
 
-🌐 **Visita mi portafolio en:** [https://jorgezarate.dev](https://jorgezarate.dev)
+Sitio en produccion: [https://jorgezarate.dev](https://jorgezarate.dev)
 
-##  Descripción
+## Resumen
 
-Portafolio web profesional que muestra mis proyectos, habilidades y experiencia como desarrollador de software especializado en aplicaciones web y móviles.
+Este proyecto esta construido con HTML, CSS y JavaScript modular. El objetivo es presentar experiencia tecnica con una interfaz moderna, fluida y optimizada para conversion (contacto, colaboraciones y oportunidades laborales).
 
-##  Tecnologías Utilizadas
+## Caracteristicas principales
+
+- Diseno responsive para mobile, tablet y desktop.
+- Navegacion clara con estados activos por seccion.
+- Animaciones progresivas con soporte para prefers-reduced-motion.
+- Carrusel de habilidades con teclado, botones e interaccion tactil.
+- Seccion de proyectos en formato caso de estudio.
+- Bloque de prueba social (metricas y testimonio).
+- Mejoras SEO: metadatos, Open Graph, Twitter Cards, canonical y JSON-LD.
+- Mejoras de accesibilidad: labels, textos alternativos y enlaces externos seguros.
+
+## Stack
 
 - HTML5
-- CSS3 (Modular)
-- JavaScript (Vanilla)
-- Fuentes: Press Start 2P, Poppins
+- CSS3 modular por secciones
+- JavaScript vanilla
+- Google Fonts: Press Start 2P y Poppins
 
-##  Estructura del Proyecto
+## Estructura del proyecto
 
-```
+```text
 projects-portfolio/
-├── assets/
-│   ├── images/          # Imágenes del portafolio (fotos personales, logo)
-│   └── icons/           # Iconos de tecnologías y habilidades
-├── css/
-│   ├── variables.css    # Variables CSS y estilos globales
-│   ├── header.css       # Estilos del header y navegación
-│   ├── home.css         # Estilos de la sección Home
-│   ├── about.css        # Estilos de la sección Sobre Mí
-│   ├── skills.css       # Estilos de la sección Habilidades
-│   ├── projects.css     # Estilos de la sección Proyectos
-│   └── contact.css      # Estilos de la sección Contacto
-├── js/
-│   └── carousel.js      # Carrusel de habilidades
-├── index.html           # Página principal
-└── README.md
+|-- assets/
+|   |-- images/
+|   `-- icons/
+|-- css/
+|   |-- variables.css
+|   |-- header.css
+|   |-- home.css
+|   |-- about.css
+|   |-- skills.css
+|   |-- certificates.css
+|   |-- projects.css
+|   |-- contact.css
+|   `-- footer.css
+|-- js/
+|   |-- animations.js
+|   |-- carousel.js
+|   `-- nav.js
+|-- index.html
+|-- CNAME
+`-- README.md
 ```
 
-##  Instalación y Uso
+## Como ejecutar en local
 
-1. Clona este repositorio:
+1. Clonar el repositorio.
+
 ```bash
 git clone https://github.com/jorgezarate15/projects-portfolio.git
+cd projects-portfolio
 ```
 
-2. Abre `index.html` en tu navegador preferido o usa un servidor local:
+1. Levantar un servidor local.
+
 ```bash
-# Con Python 3
+# Opcion Python
 python -m http.server 8000
 
-# Con Node.js (npx http-server)
+# Opcion Node
 npx http-server
 ```
-**O accede directamente en:** 🌐 [https://jorgezarate.dev](https://jorgezarate.dev)
-##  Características
 
-- **Diseño Responsivo**: Adaptado a dispositivos móviles, tablets y desktop
-- **Navegación Suave**: Scroll suave entre secciones
-- **Carrusel Interactivo**: Habilidades mostradas en carrusel con soporte táctil
-- **Animaciones CSS**: Efectos visuales modernos
-- **Estructura Modular**: CSS organizado por componentes
+1. Abrir en el navegador.
 
-##  Contacto
+```text
+http://localhost:8000
+```
 
-- **LinkedIn**: [Jorge David Zárate Martínez](https://www.linkedin.com/in/jorge-david-zárate-martinez-45746b266)
-- **GitHub**: [jorgezarate15](https://github.com/jorgezarate15)
-- **YouTube**: [ジJorge](https://www.youtube.com/@ジJorge)
-- **Email**: jorgedavidzaratemartinez15@gmail.com
+## Objetivo profesional
 
----
-Desarrollado con ❤️ por Jorge Zárate
+Mostrar no solo diseno visual, sino capacidad de entrega de producto: estructura modular, buena base de accesibilidad, optimizacion para SEO y enfoque en resultados.
+
+## Contacto
+
+- LinkedIn: [Jorge David Zarate Martinez](https://www.linkedin.com/in/jorge-david-z%C3%A1rate-martinez-45746b266)
+- GitHub: [jorgezarate15](https://github.com/jorgezarate15)
+- YouTube: [ジJorge](https://www.youtube.com/@ジJorge)
+- Email: [jorgedavidzaratemartinez15@gmail.com](mailto:jorgedavidzaratemartinez15@gmail.com)
+
+## Licencia
+
+Uso personal y demostrativo. Si deseas reutilizar contenido o estilos, abre un issue para revisarlo.
